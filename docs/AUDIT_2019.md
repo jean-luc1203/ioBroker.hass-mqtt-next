@@ -21,17 +21,25 @@
 | Previous `undefined` state in field testing | Existing `hass-mqtt.0.undefined` was observed in CT113 | Possible defect; root cause not yet proven | No undefined IDs in simulation; requires field retest |
 | Limited rich templates | `src/lib/domain/sensor.ts` uses Nunjucks to render `value_template` | Old Jinja approximations and dependency | Restricted safe template subset; unsupported expressions not evaluated |
 
+## Field validation update (10 November 2026)
+
+**The following earlier statements and rollout steps were written before field testing. They are retained as historical design analysis, not as the current status.**
+
+DEV01 is now running on a real ioBroker Debian 13 / Node.js 24 system with the official MQTT 9.2.0 client, Mosquitto, and two wired JK-BMS packs (addresses 0 and 2). The real publisher is SmartPhoton JK-BMS Legacy 4.1.12. The importer initialized normally; a test host counted 237 entity value objects, including 113 IDs associated with each BMS. Six VIS-2 pages (DE/EN, overview/diagnostics/settings) displayed physical live data. The code remains read-only. See [field report](FIELD_TEST_2026-11-10.md).
+
+This does **not** establish exhaustive long-term stability, complete HA Discovery support, or a clean standard community installation path.
+
 ## Known limitations of this prototype
 
 - A **limited experimental adapter**, not complete 2026 Home Assistant MQTT Discovery compliance. `climate`, `light`, `select`, `button`, `text`, etc. are not yet implemented.
 - Only a safe subset of `value_template` expressions is supported. Full Jinja2 is **not** implemented.
 - HA device discovery is supported for flat `components`, but complex `child_devices`, triggers, attributes and some shared templated properties are not.
 - No command publishing, deliberately. The four domains are all read-only including `switch` and `number`.
-- Initial states rely on ioBroker's `mqtt.0` object representation (`/` becomes `.`), observed in CT113; a live installation test is still required.
-- No multi-day load, reconnect, crash/restart, or performance benchmarks against an actual js-controller.
+- Initial states rely on ioBroker's `mqtt.0` object representation (`/` becomes `.`), observed in CT113 and CT114; live installation and state tests were subsequently completed on 10 November 2026.
+- No multi-day load, comprehensive reconnect/crash/restart, or performance benchmarks despite successful startup and functional real-hardware trials.
 - 232 simulated entities are **synthetic fixtures** based on domain counts, not a replay of actual retained messages.
 
-## Safe rollout sequence
+## Original safe rollout sequence (historical; completed in part)
 
 1. Preserve the current CT113 and VIS-2 projects. Do **not** restore `IOBROKER-BASE` onto CT113.
 2. The Proxmox CT113 has an `IOBROKER-BASE` snapshot (2026-11-09 09:44) with Debian 13 + Node.js 24 + fresh ioBroker. Clone that snapshot **into a different CTID**. Before booting the clone, remove its CH340 `dev0` passthrough and isolate its MQTT/network configuration to prevent a second live RS485 reader or duplicate broker client. Alternatively, prepare a fresh isolated LXC/VM.
