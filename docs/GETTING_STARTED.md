@@ -31,7 +31,11 @@ BMS_GLOBAL/#
 
 These are examples, **not** a generic requirement or a fixed list. Other devices and publishers may use other prefixes.
 
-Check `mqtt.0.info.connection = true` and verify that actual broker messages are visible as ioBroker states like `mqtt.0.BMS_master.Cell_1_volt`. The official MQTT adapter represents topic separators `/` as dots in state IDs.
+Check `mqtt.0.info.connection = true` and verify that actual broker messages are visible as ioBroker states like `mqtt.0.BMS_master.Cell_1_volt`.
+
+![Official ioBroker MQTT 9.2.0 client connected and healthy in Admin (French UI)](images/iobroker-mqtt-client-connected.webp)
+
+*Official MQTT transport status from the field-test system. This is not the new Discovery importer itself.* The official MQTT adapter represents topic separators `/` as dots in state IDs.
 
 Ensure your MQTT adapter's own publishing options do not send changes back to the broker. **Broker ACLs are the primary safeguard.** An unusual publish-state mask alone does not enforce read-only operation.
 
