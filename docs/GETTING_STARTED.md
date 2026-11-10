@@ -64,6 +64,12 @@ runuser -u iobroker -- /usr/bin/iob stop hass-mqtt-next.0
 
 The instance defaults to disabled. In ioBroker Admin set `mqttClientInstanceID` to `mqtt.0` (or `mqtt.1`) and `hassPrefix` to `homeassistant` (or your actual Discovery prefix). Then enable the instance.
 
+**Screenshot — running DEV01 instance settings (field test):**
+
+![hass-mqtt-next DEV01 instance settings: MQTT adapter mqtt.0, Discovery prefix homeassistant, read-only note](images/hass-mqtt-next-config.webp)
+
+*This screenshot is from the French-language ioBroker Admin interface; the configuration field names vary with the selected Admin language.*
+
 Check its log for a line similar to:
 
 ~~~text
