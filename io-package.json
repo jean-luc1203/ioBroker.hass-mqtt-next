@@ -1,0 +1,71 @@
+{
+  "common": {
+    "name": "hass-mqtt-next",
+    "version": "0.1.0-dev.1",
+    "titleLang": {
+      "en": "MQTT Discovery Next (read-only preview)",
+      "de": "MQTT Discovery Next (Nur Lesen)",
+      "fr": "MQTT Discovery Next (lecture seule)"
+    },
+    "desc": {
+      "en": "Experimental read-only Home Assistant MQTT Discovery importer",
+      "de": "Experimenteller schreibgeschützter Home Assistant MQTT Discovery Import",
+      "fr": "Import expérimental MQTT Discovery en lecture seule"
+    },
+    "authors": [
+      "SmartPhoton prototype study (independent reimplementation; upstream credited in README)"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "mode": "daemon",
+    "type": "iot-systems",
+    "compact": true,
+    "enabled": false,
+    "loglevel": "info",
+    "adminUI": {
+      "config": "json"
+    },
+    "connectionType": "local",
+    "dataSource": "push",
+    "dependencies": [
+      {
+        "js-controller": ">=7.2.0"
+      },
+      {
+        "admin": ">=7.0.0"
+      },
+      {
+        "mqtt": ">=8.0.0"
+      }
+    ]
+  },
+  "native": {
+    "mqttClientInstanceID": "mqtt.0",
+    "hassPrefix": "homeassistant"
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "name": "MQTT connected",
+        "type": "boolean",
+        "role": "indicator.connected",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
+}
