@@ -29,7 +29,7 @@ The working Proxmox CT113 is the reference: Debian 13, Node.js 24, ioBroker, MQT
 5. Compare entities/values/availability to `hass-mqtt.0`. Verify **zero outgoing command messages**.
 6. Only after real tests pass, consider a controlled public preview and a German ioBroker forum demonstration.
 
-The **DEV01 sources and 12 local tests** were packaged separately in `SmartPhoton_hass-mqtt-next_DEV01_simulation.zip` for this prepublication study. Repository source import is being prepared.
+The **complete DEV01 prototype sources, two test suites, and sample fixtures** are included in this repository. Run `npm run check` on Node.js 22 or 24 to execute the 12 isolated tests without installing any dependencies. GitHub Actions also runs these checks on both Node.js versions; this does not establish actual ioBroker controller compatibility.
 
 ## Provenance
 
