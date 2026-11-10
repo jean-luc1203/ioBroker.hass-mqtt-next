@@ -2,6 +2,10 @@
 
 **Experimental preview 0.1.0-dev.1 — read-only Home Assistant MQTT Discovery for ioBroker**
 
+![SmartPhoton: two physical JK-BMS battery packs monitored in ioBroker VIS-2, German overview](docs/images/vis2-dual-jkbms-de-overview.webp)
+
+*Real field test: two wired RS485 JK-BMS packs (addresses 0 and 2), SmartPhoton Legacy → official MQTT client → hass-mqtt-next → VIS-2. This screenshot is a separate example dashboard, not a bundled adapter UI.*
+
 Import supported Home Assistant MQTT Discovery announcements into native ioBroker states, using the **official ioBroker MQTT adapter** as the MQTT transport. No Home Assistant instance is required: any MQTT publisher using the supported Discovery format can be a source.
 
 > **Development preview, not an official ioBroker adapter release.** Tested on a real installation, but not a complete implementation of the Home Assistant MQTT Discovery specification. Make a backup and use a test installation first. Not published to npm or the ioBroker stable/beta repositories.
