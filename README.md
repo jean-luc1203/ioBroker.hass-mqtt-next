@@ -45,7 +45,16 @@ Typical topics from the SmartPhoton test: `homeassistant/#`, `BMS_master/#`, `BM
 
 ## Get started
 
-**English:** [Installation and configuration](docs/GETTING_STARTED.md)  
+**English:** [Installation and configuration](docs/GETTING_STARTED.md)
+
+**Actual DEV01 instance configuration** (MQTT source `mqtt.0`, Discovery prefix `homeassistant`):
+
+![Read-only hass-mqtt-next DEV01 configuration screen](docs/images/hass-mqtt-next-config.webp)
+
+**Official MQTT transport** (connected):
+
+![ioBroker MQTT 9.2.0 client status](docs/images/iobroker-mqtt-client-connected.webp)
+  
 **Deutsch:** [Installation und Einrichtung](docs/ERSTE_SCHRITTE_DE.md)  
 **Technical evidence:** [Field test and limitations](docs/FIELD_TEST_2026-11-10.md)  
 **Background:** [Audit of the older 2019 adapter](docs/AUDIT_2019.md)
