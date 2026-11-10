@@ -53,7 +53,11 @@ runuser -u iobroker -- /usr/bin/iob stop hass-mqtt-next.0
 
 Diese Installation setzt voraus, dass `@iobroker/adapter-core` in einer passenden Version auf dem ioBroker-System bereits aufgelöst werden kann. Das war auf den Testsystemen der Fall. **Nicht** blind npm-Abhängigkeiten im produktiven ioBroker-Verzeichnis überschreiben.
 
-Danach die Instanz in der ioBroker-Administration konfigurieren und aktivieren. Im Log sollte eine Zeile wie folgt erscheinen:
+Danach die Instanz in der ioBroker-Administration konfigurieren und aktivieren.
+
+![Einstellungen der DEV01-Instanz: mqtt.0, Prefix homeassistant, nur lesend](images/hass-mqtt-next-config.webp)
+
+*Screenshot aus der französischsprachigen ioBroker-Administrationsoberfläche.* Im Log sollte eine Zeile wie folgt erscheinen:
 
 ~~~text
 Read-only MQTT Discovery initialized: N stored configurations, M entities
