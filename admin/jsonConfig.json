@@ -1,0 +1,19 @@
+{
+  "i18n": true,
+  "items": {
+    "mqttClientInstanceID": {
+      "type": "text",
+      "label": {"en":"MQTT adapter instance", "de":"MQTT-Adapterinstanz", "fr":"Instance MQTT"},
+      "newLine": true
+    },
+    "hassPrefix": {
+      "type": "text",
+      "label": {"en":"Home Assistant Discovery prefix", "de":"Home Assistant Discovery Präfix", "fr":"Préfixe Discovery Home Assistant"},
+      "newLine": true
+    },
+    "readOnlyNote": {
+      "type": "staticText",
+      "text": {"en":"Preview: read-only. Never publishes BMS commands.", "de":"Testversion: nur lesend. Sendet keine BMS-Befehle.", "fr":"Prototype en lecture seule. Aucune commande BMS."}
+    }
+  }
+}
