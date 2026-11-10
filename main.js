@@ -19,11 +19,11 @@ class HassMqttNext extends Adapter {
   }
   _topic2id(topic) {
     // Matches the mqtt.0 topic hierarchy created by ioBroker MQTT adapter.
-    return `${this.mqttId}.${String(topic).replace(/\\//g, '.')}`;
+    return `${this.mqttId}.${String(topic).replace(/\//g, '.')}`;
   }
   _id2topic(id) {
     const prefix = this.mqttId + '.';
-    return id.startsWith(prefix) ? id.slice(prefix.length).replace(/\\./g, '/') : null;
+    return id.startsWith(prefix) ? id.slice(prefix.length).replace(/\./g, '/') : null;
   }
   async _ensureBase() {
     await this.setObjectNotExistsAsync('entities', {type:'channel', common:{name:'MQTT Discovery entities'}, native:{}});
@@ -57,8 +57,8 @@ class HassMqttNext extends Adapter {
     }
   }
   async _ready() {
-    this.mqttId = String(this.config.mqttClientInstanceID || 'mqtt.0').replace(/\\.$/, '');
-    if (!/^mqtt\\.\d+$/.test(this.mqttId)) throw new Error('mqttClientInstanceID must look like mqtt.0');
+    this.mqttId = String(this.config.mqttClientInstanceID || 'mqtt.0').replace(/\.$/, '');
+    if (!/^mqtt\.\d+$/.test(this.mqttId)) throw new Error('mqttClientInstanceID must look like mqtt.0');
     const prefix = String(this.config.hassPrefix || 'homeassistant');
     if (!/^[A-Za-z0-9_-]+$/.test(prefix)) throw new Error('Invalid discovery prefix');
     this.registry = new DiscoveryRegistry({prefix});
