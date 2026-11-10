@@ -1,0 +1,8 @@
+BMS_master/Cell_1_volt 3.327
+BMS_2/Cell_1_volt 3.322
+BMS_2/alarm/active OFF
+BMS_2/control/max_charge_current/state 150
+homeassistant/sensor/bms_master_bms_Cell_1_volt/config {"name":"Master cell 1","unique_id":"bms_master_bms_Cell_1_volt","state_topic":"BMS_master/Cell_1_volt","unit_of_measurement":"V"}
+homeassistant/sensor/bms_2_bms_Cell_1_volt/config {"name":"BMS2 cell 1","unique_id":"bms_2_bms_Cell_1_volt","state_topic":"BMS_2/Cell_1_volt","unit_of_measurement":"V"}
+homeassistant/binary_sensor/bms_2_bms_alarm_active/config {"name":"BMS 2 Alarm","state_topic":"BMS_2/alarm/active","payload_on":"ON","payload_off":"OFF"}
+homeassistant/number/bms_2_bms_max_charge_current/config {"name":"Max charge current","state_topic":"BMS_2/control/max_charge_current/state","command_topic":"BMS_2/control/max_charge_current/set","unit_of_measurement":"A"}
