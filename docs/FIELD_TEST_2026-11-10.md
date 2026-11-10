@@ -19,6 +19,12 @@ Demonstrate that a new independent, read-only Home Assistant MQTT Discovery impo
 
 The public guide deliberately omits real IPs, hostnames, broker credentials, device serial numbers, user-specific IDs and raw captures.
 
+## Screenshot — real dual JK-BMS in VIS-2
+
+![German VIS-2 overview with two physical JK-BMS packs displayed side by side](images/vis2-dual-jkbms-de-overview.webp)
+
+*German-language overview from the test system. BMS readings are representative of a moment in time; labels and layout belong to a separate VIS-2 project.*
+
 ## Observed results
 
 | Check | Observation |
